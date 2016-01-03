@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Widget</class>
+ <widget class="QWidget" name="Widget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>647</width>
+    <height>206</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>1</horstretch>
+    <verstretch>1</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>Strobe Tuner</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0">
+   <item>
+    <layout class="QHBoxLayout" name="controlBar" stretch="0,0,1,0,3">
+     <property name="sizeConstraint">
+      <enum>QLayout::SetDefaultConstraint</enum>
+     </property>
+     <item>
+      <widget class="QCheckBox" name="toggleConnected">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="toolTip">
+        <string>whether to connect to the JACK server</string>
+       </property>
+       <property name="text">
+        <string>Audio On</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="toggleAutoselect">
+       <property name="toolTip">
+        <string>attempt to highlight the closest pitch to the one being played</string>
+       </property>
+       <property name="text">
+        <string>Detect</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="selectScale">
+       <property name="toolTip">
+        <string>the set of pitches to show tuners for</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="toggleAdvanced">
+       <property name="maximumSize">
+        <size>
+         <width>24</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="toolTip">
+        <string>show or hide the advanced interface</string>
+       </property>
+       <property name="text">
+        <string>«</string>
+       </property>
+       <property name="checkable">
+        <bool>true</bool>
+       </property>
+       <property name="flat">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QFrame" name="advancedFrame">
+       <property name="sizePolicy">
+        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QWidget" name="horizontalLayoutWidget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>306</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <layout class="QHBoxLayout" name="advancedBar" stretch="1,0,0,0,0,0">
+         <property name="sizeConstraint">
+          <enum>QLayout::SetDefaultConstraint</enum>
+         </property>
+         <item>
+          <widget class="QComboBox" name="selectTemperament">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>the temperament system to use</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="colonLabel">
+           <property name="text">
+            <string>:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="refPitch">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize">
+            <size>
+             <width>64</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="toolTip">
+            <string>the pitch to use as a reference and tonic</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="equalsLabel">
+           <property name="text">
+            <string>=</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QDoubleSpinBox" name="refFreq">
+           <property name="toolTip">
+            <string>the frequency the reference pitch should have in Hertz</string>
+           </property>
+           <property name="minimum">
+            <double>20.000000000000000</double>
+           </property>
+           <property name="maximum">
+            <double>20000.000000000000000</double>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="hertzLabel">
+           <property name="text">
+            <string>Hz</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="wheelArea">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Plain</enum>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>toggleConnected</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Widget</receiver>
+   <slot>toggleConnected(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>222</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toggleAdvanced</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Widget</receiver>
+   <slot>toggleAdvanced(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>265</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>281</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>selectScale</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Widget</receiver>
+   <slot>selectScale(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>160</x>
+     <y>23</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>selectTemperament</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Widget</receiver>
+   <slot>selectTemperament(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>384</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>refPitch</sender>
+   <signal>currentIndexChanged(int)</signal>
+   <receiver>Widget</receiver>
+   <slot>selectRefPitch(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>474</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>refFreq</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>Widget</receiver>
+   <slot>changeRefFreq(double)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>574</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>282</x>
+     <y>143</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>toggleAutoselect</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>Widget</receiver>
+   <slot>toggleAutoselect(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>148</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>323</x>
+     <y>135</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>toggleConnected(bool)</slot>
+  <slot>toggleAdvanced(bool)</slot>
+  <slot>selectTemperament(int)</slot>
+  <slot>selectScale(int)</slot>
+  <slot>selectRefPitch(int)</slot>
+  <slot>changeRefFreq(double)</slot>
+  <slot>toggleAutoselect(bool)</slot>
+ </slots>
+</ui>
