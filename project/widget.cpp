@@ -8,6 +8,7 @@
 #include <QConicalGradient>
 #include <QMessageBox>
 #include <QDebug>
+#include <QApplication>
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),

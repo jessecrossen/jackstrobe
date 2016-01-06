@@ -4,14 +4,15 @@
 #
 #-------------------------------------------------
 
+CONFIG += c++11
+CONFIG += qt
+
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = jackstrobe
 TEMPLATE = app
-
-CONFIG += c++11
 
 LIBS += -L/usr/include/jack/ -ljack
 
