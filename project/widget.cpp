@@ -404,7 +404,7 @@ void Widget::drawWheel(QRect r, Wheel *wheel, float alpha)
     QColor color;
     QConicalGradient gradient(QPointF(0, 0), 90);
     for (jack_nframes_t s = 0; s < wheel->sampleCount; s++) {
-        value = qMin(1.0, fabs(*sample)) * alpha;
+        value = qMin(1.0f, fabsf(*sample)) * alpha;
         if (*sample > 0.0) {
             color = QColor::fromHsvF(0.0, 0.0, 1.0, value);
         }
