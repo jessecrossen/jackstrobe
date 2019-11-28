@@ -38,19 +38,19 @@ FrequencyMap::FrequencyMap()
     scales.append({"Mandolin", {"G3","D4","A4","E5"}});
     scales.append({"Ukelele (Concert)", {"G4","C4","E4","A4"}});
     scales.append({"Violin", {"G3","D4","A4","E5"}});
-    scales.append({"Chromatic 1", {"A1","A#1","B1","C1","C#1","D1","D#1","E1","F1","G1","G#1"}});
-    scales.append({"Chromatic 2", {"A2","A#2","B2","C2","C#2","D2","D#2","E2","F2","G2","G#2"}});
-    scales.append({"Chromatic 3", {"A3","A#3","B3","C3","C#3","D3","D#3","E3","F3","G3","G#3"}});
-    scales.append({"Chromatic 4", {"A4","A#4","B4","C4","C#4","D4","D#4","E4","F4","G4","G#4"}});
-    scales.append({"Chromatic 5", {"A5","A#5","B5","C5","C#5","D5","D#5","E5","F5","G5","G#5"}});
-    scales.append({"Chromatic 6", {"A6","A#6","B6","C6","C#6","D6","D#6","E6","F6","G6","G#6"}});
+    scales.append({"Chromatic 1", {"C1","C#1","D1","D#1","E1","F1","G1","G#1","A1","A#1","B1"}});
+    scales.append({"Chromatic 2", {"C2","C#2","D2","D#2","E2","F2","G2","G#2","A2","A#2","B2"}});
+    scales.append({"Chromatic 3", {"C3","C#3","D3","D#3","E3","F3","G3","G#3","A3","A#3","B3"}});
+    scales.append({"Chromatic 4", {"C4","C#4","D4","D#4","E4","F4","G4","G#4","A4","A#4","B4"}});
+    scales.append({"Chromatic 5", {"C5","C#5","D5","D#5","E5","F5","G5","G#5","A5","A#5","B5"}});
+    scales.append({"Chromatic 6", {"C6","C#6","D6","D#6","E6","F6","G6","G#6","A6","A#6","B6"}});
 
     // pitch names
     QList<QString> octaves({"0", "1", "2", "3", "4", "5", "6", "7", "8"});
-    QList<QString> sharps({"A", "A#", "B", "C", "C#", "D", "D#", "E", "F", "F#", "G", "G#"});
-    QList<QString> flats({"A", "Bb", "B", "C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab"});
+    QList<QString> sharps({"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"});
+    QList<QString> flats({"C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"});
     QString name;
-    int num = 21; // the MIDI note number for A0
+    int num = 12; // the MIDI note number for C0
     for (int oct = 0; oct < octaves.length(); oct++) {
         for (int i = 0; i < sharps.length(); i++) {
             if (sharps.at(i) == flats.at(i)) {
