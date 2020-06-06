@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include <QPainter>
+#include <QPainterPath>
 #include <QConicalGradient>
 #include <QMessageBox>
 #include <QDebug>
